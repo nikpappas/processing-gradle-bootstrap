@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'com.nikpappas.processing'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // NOTE: The people maintaining the maven repoository are not the same
+    // with those who maintain the repo. In case they stop maintaining the
+    // maven repository you can always download the distribution from
+    // https://processing.org/download/
+    implementation group: 'org.processing', name: 'core', version: '3.3.6'
+
+    // Alternative import using the jar from the above link
+    //  implementation files('<path to processing>/core.jar')
+
+    // Other interesting libraries are can be found here
+    // https://processing.org/reference/libraries/
+
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    testCompile"org.junit.jupiter:junit-jupiter-params:5.7.0"
+}
+
+test {
+    useJUnitPlatform()
+}
